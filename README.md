@@ -1,11 +1,11 @@
-# 📝 Notes App
+# 📝 Smooth Notes
 
 [![Android CI/CD](https://github.com/moahaassy-design/smooth-notes/workflows/Android%20CI/CD/badge.svg)](https://github.com/moahaassy-design/smooth-notes/actions)
 [![Kotlin](https://img.shields.io/badge/Kotlin-1.9.20-blue.svg)](https://kotlinlang.org/)
 [![Android](https://img.shields.io/badge/Android-8.1.4-green.svg)](https://developer.android.com/)
 [![API](https://img.shields.io/badge/API-21%2B-brightgreen.svg)](https://developer.android.com/studio/releases/platforms)
 
-Notes App adalah aplikasi Android moderno untuk mencatat dan mengelola catatan pribadi dengan Material You design dan fitur-fitur canggih.
+Smooth Notes adalah aplikasi Android modern untuk mencatat dan mengelola catatan pribadi dengan Material You design dan fitur-fitur canggih.
 
 ## ✨ Fitur
 
