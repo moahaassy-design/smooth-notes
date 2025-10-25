@@ -8,7 +8,9 @@ import androidx.compose.runtime.remember
 import androidx.navigation.compose.rememberNavController
 import com.notesapp.presentation.navigation.AppNavigation
 import com.notesapp.presentation.theme.NotesAppTheme
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
