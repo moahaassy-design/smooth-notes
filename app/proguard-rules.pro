@@ -20,11 +20,38 @@
 # hide the original source file name.
 -renamesourcefileattribute SourceFile
 
-# Room specific rules
+# Keep Room entities
 -keep class com.notesapp.data.database.** { *; }
--keep class com.notesapp.domain.model.** { *; }
 
-# Compose specific rules
--keep class androidx.compose.runtime.** { *; }
--keep class androidx.compose.ui.** { *; }
+# Keep Hilt classes
+-keep class dagger.hilt.** { *; }
+
+# Keep annotation processor classes
+-keep class * extends javax.inject.Named
+
+# Generic keep rules for data classes
+-keep class com.notesapp.domain.** { *; }
+-keep class com.notesapp.presentation.** { *; }
+
+# Keep enum classes
+-keepclassmembers enum * {
+    public static **[] values();
+    public static ** valueOf(java.lang.String);
+}
+
+# Keep parcelable classes
+-keepclassmembers class * implements android.os.Parcelable {
+  public static final android.os.Parcelable$Creator CREATOR;
+}
+
+# Keep application class
+-keep class com.notesapp.NotesApplication { *; }
+
+# Room annotations
+-keep class * extends androidx.room.RoomDatabase { *; }
+-keep @androidx.room.Entity class * { *; }
+-keep @androidx.room.Dao class * { *; }
+
+# Material Design classes
 -keep class androidx.compose.material3.** { *; }
+-keep class androidx.compose.material.** { *; }
