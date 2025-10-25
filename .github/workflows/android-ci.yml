@@ -97,10 +97,9 @@ jobs:
     needs: build
     if: github.ref == 'refs/heads/main' && github.event_name == 'push'
     
-    # Add explicit permissions for GitHub Releases
+    # Add explicit permissions for GitHub Releases - content write permission is sufficient
     permissions:
       contents: write
-      releases: write
       
     steps:
     - name: Checkout code
