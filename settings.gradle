@@ -1,2 +1,1 @@
-include ':app'
-rootProject.name = "Smooth Notes"
+// Final test for APK build with proper configuration
