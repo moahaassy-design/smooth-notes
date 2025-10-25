@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<full-backup-content>
+    <!-- Include external files directory and app specific files -->
+    <exclude domain="sharedpref" path="." />
+    <exclude domain="file" path="cache/" />
+    <exclude domain="file" path="no_backup/" />
+</full-backup-content>
