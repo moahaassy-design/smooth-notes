@@ -97,6 +97,11 @@ jobs:
     needs: build
     if: github.ref == 'refs/heads/main' && github.event_name == 'push'
     
+    # Add explicit permissions for GitHub Releases
+    permissions:
+      contents: write
+      releases: write
+      
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
