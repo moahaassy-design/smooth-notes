@@ -15,7 +15,6 @@ jobs:
     env:
       ANDROID_SDK_ROOT: ${{ github.workspace }}/android-sdk
       JAVA_VERSION: '17'
-      MODULE_NAME: app
 
     steps:
       - name: Checkout
@@ -39,7 +38,6 @@ jobs:
           yes | $ANDROID_SDK_ROOT/cmdline-tools/latest/bin/sdkmanager --sdk_root=$ANDROID_SDK_ROOT \
             "platform-tools" "platforms;android-34" "build-tools;34.0.0"
           yes | $ANDROID_SDK_ROOT/cmdline-tools/latest/bin/sdkmanager --licenses
-        shell: bash
 
       - name: Ensure Gradle wrapper executable
         run: chmod +x ./gradlew
@@ -53,6 +51,6 @@ jobs:
           name: debug-apk
           path: app/build/outputs/apk/debug/
 
-      - name: Optional: List artifacts
+      - name: List artifacts
         if: always()
         run: ls -la app/build/outputs/apk/debug/ || true
