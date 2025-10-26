@@ -29,14 +29,21 @@ jobs:
           java-version: ${{ env.JAVA_VERSION }}
           cache: gradle
 
-      - name: Setup Android SDK
+      - name: Setup Android SDK (Fixed Path)
         run: |
           sudo apt-get update
           sudo apt-get install -y wget unzip
           mkdir -p $ANDROID_SDK_ROOT/cmdline-tools
           cd $ANDROID_SDK_ROOT/cmdline-tools
-          wget -q https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip
-          unzip -q commandlinetools-linux-11076708_latest.zip -d latest
+          wget -q https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip -O sdk-tools.zip
+          
+          # unzip langsung ke folder "cmdline-tools" bukan "latest"
+          unzip -q sdk-tools.zip
+          
+          # buat folder 'latest' berisi hasil unzip
+          mkdir -p latest
+          mv cmdline-tools/* latest/ || true
+          
           yes | $ANDROID_SDK_ROOT/cmdline-tools/latest/bin/sdkmanager --sdk_root=$ANDROID_SDK_ROOT \
             "platform-tools" "platforms;android-34" "build-tools;34.0.0"
           yes | $ANDROID_SDK_ROOT/cmdline-tools/latest/bin/sdkmanager --licenses
@@ -46,7 +53,7 @@ jobs:
         run: |
           java -version
           echo "Android SDK location: $ANDROID_SDK_ROOT"
-          ls -al $ANDROID_SDK_ROOT || true
+          ls -R $ANDROID_SDK_ROOT/cmdline-tools
           chmod +x ./gradlew
 
       - name: Build Debug APK
