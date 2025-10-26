@@ -3,7 +3,6 @@ package com.notesapp.data.database
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import androidx.room.migration.Migration
 import android.content.Context
 
 /**

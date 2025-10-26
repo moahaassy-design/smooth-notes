@@ -24,6 +24,29 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
         
+    - name: Setup Android SDK
+      uses: android-actions/setup-android@v3
+      with:
+        api-level: 34
+        build-tools-version: 34.0.0
+        target: default
+        
+    - name: Verify Android SDK setup
+      run: |
+        echo "🔍 Android SDK version:"
+        sdkmanager --version
+        echo "📱 Installed API levels:"
+        sdkmanager --list | grep "system-images" | grep "android-" | head -5
+        echo "🔨 Build tools version:"
+        sdkmanager --list | grep "build-tools" | head -3
+        
+    - name: Setup Android environment
+      run: |
+        echo "ANDROID_HOME=$ANDROID_HOME" >> $GITHUB_ENV
+        echo "ANDROID_SDK_ROOT=$ANDROID_HOME" >> $GITHUB_ENV
+        echo "$ANDROID_HOME/platform-tools" >> $GITHUB_PATH
+        echo "$ANDROID_HOME/cmdline-tools/latest/bin" >> $GITHUB_PATH
+        
     - name: Cache Gradle dependencies
       uses: actions/cache@v4
       with:
@@ -77,7 +100,7 @@ jobs:
       run: ./gradlew lint --continue || echo "Lint completed with warnings"
       
     - name: Build debug APK
-      run: ./gradlew assembleDebug --continue
+      run: ./gradlew assembleDebug
       
     - name: Debug APK build output
       run: |
@@ -138,6 +161,29 @@ jobs:
       with:
         java-version: '17'
         distribution: 'temurin'
+        
+    - name: Setup Android SDK
+      uses: android-actions/setup-android@v3
+      with:
+        api-level: 34
+        build-tools-version: 34.0.0
+        target: default
+        
+    - name: Verify Android SDK setup
+      run: |
+        echo "🔍 Android SDK version:"
+        sdkmanager --version
+        echo "📱 Installed API levels:"
+        sdkmanager --list | grep "system-images" | grep "android-" | head -5
+        echo "🔨 Build tools version:"
+        sdkmanager --list | grep "build-tools" | head -3
+        
+    - name: Setup Android environment
+      run: |
+        echo "ANDROID_HOME=$ANDROID_HOME" >> $GITHUB_ENV
+        echo "ANDROID_SDK_ROOT=$ANDROID_HOME" >> $GITHUB_ENV
+        echo "$ANDROID_HOME/platform-tools" >> $GITHUB_PATH
+        echo "$ANDROID_HOME/cmdline-tools/latest/bin" >> $GITHUB_PATH
         
     - name: Cache Gradle dependencies
       uses: actions/cache@v4
@@ -228,14 +274,11 @@ jobs:
           exit 1
         fi
         
-    - name: Create Release
-      id: create_release
-      uses: actions/create-release@v1
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - name: Create Release with APK
+      uses: softprops/action-gh-release@v1
       with:
         tag_name: v${{ github.run_number }}.${{ github.sha }}
-        release_name: Release ${{ github.run_number }} - Android APK
+        name: Release ${{ github.run_number }} - Android APK
         body: |
           Release ${{ github.run_number }} of SmoothNotes Android App
           
@@ -260,13 +303,6 @@ jobs:
           Download the Android APK file from the Assets section below.
         draft: false
         prerelease: false
-        
-    - name: Upload Debug APK to Release
-      uses: actions/upload-release-asset@v1
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      with:
-        upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: app/build/outputs/apk/debug/app-debug.apk
-        asset_name: SmoothNotes-Debug-v${{ github.run_number }}.apk
-        asset_content_type: application/vnd.android.package-archive
+        files: |
+          app/build/outputs/apk/debug/app-debug.apk
+        generate_release_notes: true
