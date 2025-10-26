@@ -1,4 +1,4 @@
-name: Build Debug APK
+name: Android Debug Build
 
 on:
   push:
@@ -10,24 +10,26 @@ on:
 
 jobs:
   build:
+    name: Build Debug APK
     runs-on: ubuntu-latest
 
     env:
       ANDROID_SDK_ROOT: ${{ github.workspace }}/android-sdk
       JAVA_VERSION: '17'
+      MODULE_NAME: app
 
     steps:
-      - name: Checkout
+      - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Set up JDK
+      - name: Setup JDK
         uses: actions/setup-java@v4
         with:
           distribution: 'temurin'
           java-version: ${{ env.JAVA_VERSION }}
-          cache: 'gradle'
+          cache: gradle
 
-      - name: Prepare Android SDK
+      - name: Setup Android SDK
         run: |
           sudo apt-get update
           sudo apt-get install -y wget unzip
@@ -38,19 +40,24 @@ jobs:
           yes | $ANDROID_SDK_ROOT/cmdline-tools/latest/bin/sdkmanager --sdk_root=$ANDROID_SDK_ROOT \
             "platform-tools" "platforms;android-34" "build-tools;34.0.0"
           yes | $ANDROID_SDK_ROOT/cmdline-tools/latest/bin/sdkmanager --licenses
+        shell: bash
 
-      - name: Ensure Gradle wrapper executable
-        run: chmod +x ./gradlew
+      - name: Verify Environment
+        run: |
+          java -version
+          echo "Android SDK location: $ANDROID_SDK_ROOT"
+          ls -al $ANDROID_SDK_ROOT || true
+          chmod +x ./gradlew
 
       - name: Build Debug APK
-        run: ./gradlew clean assembleDebug
+        run: ./gradlew clean assembleDebug --stacktrace --info
+
+      - name: List Build Outputs
+        if: always()
+        run: ls -l app/build/outputs/apk/debug/ || true
 
       - name: Upload Debug APK
         uses: actions/upload-artifact@v4
         with:
           name: debug-apk
-          path: app/build/outputs/apk/debug/
-
-      - name: List artifacts
-        if: always()
-        run: ls -la app/build/outputs/apk/debug/ || true
+          path: app/build/outputs/apk/debug/*.apk
