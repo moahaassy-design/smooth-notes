@@ -1,0 +1,144 @@
+{
+  "total_found": 29,
+  "family_codes": [
+    {
+      "code": "UNLIMITED_TURBO",
+      "name": "Unlimited Turbo",
+      "source": "documentation"
+    },
+    {
+      "code": "UNLIMITED_TURBO_30D",
+      "name": "Unlimited Turbo 30 Hari",
+      "source": "documentation"
+    },
+    {
+      "code": "UNLIMITED_TURBO_7D",
+      "name": "Unlimited Turbo 7 Hari",
+      "source": "documentation"
+    },
+    {
+      "code": "FREEDOM",
+      "name": "Freedom Internet",
+      "source": "documentation"
+    },
+    {
+      "code": "FREEDOM_MONTHLY",
+      "name": "Freedom Bulanan",
+      "source": "documentation"
+    },
+    {
+      "code": "FREEDOM_WEEKLY",
+      "name": "Freedom Mingguan",
+      "source": "documentation"
+    },
+    {
+      "code": "COMBO_LITE",
+      "name": "Combo Lite",
+      "source": "documentation"
+    },
+    {
+      "code": "COMBO_XTRA",
+      "name": "Combo Xtra",
+      "source": "documentation"
+    },
+    {
+      "code": "COMBO_MAX",
+      "name": "Combo Max",
+      "source": "documentation"
+    },
+    {
+      "code": "COMBO_PREMIUM",
+      "name": "Combo Premium",
+      "source": "documentation"
+    },
+    {
+      "code": "COMBO_LITE_7D",
+      "name": "Combo Lite 7 Hari",
+      "source": "documentation"
+    },
+    {
+      "code": "COMBO_LITE_30D",
+      "name": "Combo Lite 30 Hari",
+      "source": "documentation"
+    },
+    {
+      "code": "COMBO_XTRA_7D",
+      "name": "Combo Xtra 7 Hari",
+      "source": "documentation"
+    },
+    {
+      "code": "COMBO_XTRA_30D",
+      "name": "Combo Xtra 30 Hari",
+      "source": "documentation"
+    },
+    {
+      "code": "INTERNET_BAIK",
+      "name": "Internet Baik",
+      "source": "documentation"
+    },
+    {
+      "code": "VIDEO_MAX",
+      "name": "Video Max",
+      "source": "documentation"
+    },
+    {
+      "code": "GAMES_MAX",
+      "name": "Games Max",
+      "source": "documentation"
+    },
+    {
+      "code": "SOCIAL_MEDIA",
+      "name": "Social Media",
+      "source": "documentation"
+    },
+    {
+      "code": "DATA_ONLY",
+      "name": "Data Only",
+      "source": "documentation"
+    },
+    {
+      "code": "PAKET_DATA",
+      "name": "Paket Data",
+      "source": "documentation"
+    },
+    {
+      "code": "XTRA_COMBO",
+      "name": "Xtra Combo",
+      "source": "documentation"
+    },
+    {
+      "code": "XTRA_COMBO_LITE",
+      "name": "Xtra Combo Lite",
+      "source": "documentation"
+    },
+    {
+      "code": "XTRA_COMBO_MAX",
+      "name": "Xtra Combo Max",
+      "source": "documentation"
+    },
+    {
+      "code": "GAMES",
+      "source": "forum"
+    },
+    {
+      "code": "SOCIAL",
+      "source": "forum"
+    },
+    {
+      "code": "XTRA_COMBO_PREMIUM",
+      "source": "forum"
+    },
+    {
+      "code": "FAMILY",
+      "source": "codebase"
+    },
+    {
+      "code": "TURBO",
+      "source": "codebase"
+    },
+    {
+      "code": "COMBO",
+      "source": "codebase"
+    }
+  ]
+}
