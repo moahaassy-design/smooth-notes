@@ -1,0 +1,107 @@
+{
+  "phone_number": "6287864020187",
+  "api_key": "245d2532-64c7-42ec-b...",
+  "total_found": 18,
+  "family_codes": [
+    {
+      "id": "UNLIMITED_TURBO",
+      "label": "Unlimited Turbo",
+      "_subs_type": "PREPAID",
+      "_source": "common_knowledge"
+    },
+    {
+      "id": "FREEDOM",
+      "label": "Freedom",
+      "_subs_type": "PREPAID",
+      "_source": "common_knowledge"
+    },
+    {
+      "id": "COMBO_LITE",
+      "label": "Combo Lite",
+      "_subs_type": "PREPAID",
+      "_source": "common_knowledge"
+    },
+    {
+      "id": "COMBO_XTRA",
+      "label": "Combo Xtra",
+      "_subs_type": "PREPAID",
+      "_source": "common_knowledge"
+    },
+    {
+      "id": "COMBO_MAX",
+      "label": "Combo Max",
+      "_subs_type": "PREPAID",
+      "_source": "common_knowledge"
+    },
+    {
+      "id": "COMBO_PREMIUM",
+      "label": "Combo Premium",
+      "_subs_type": "PREPAID",
+      "_source": "common_knowledge"
+    },
+    {
+      "id": "INTERNET_BAIK",
+      "label": "Internet Baik",
+      "_subs_type": "PREPAID",
+      "_source": "common_knowledge"
+    },
+    {
+      "id": "PAKET_DATA",
+      "label": "Paket Data",
+      "_subs_type": "PREPAID",
+      "_source": "common_knowledge"
+    },
+    {
+      "id": "VIDEO_MAX",
+      "label": "Video Max",
+      "_subs_type": "PREPAID",
+      "_source": "common_knowledge"
+    },
+    {
+      "id": "GAMES",
+      "label": "Games",
+      "_subs_type": "PREPAID",
+      "_source": "common_knowledge"
+    },
+    {
+      "id": "UNLIMITED_TURBO_30D",
+      "label": "Unlimited Turbo 30D",
+      "_source": "pattern"
+    },
+    {
+      "id": "UNLIMITED_TURBO_7D",
+      "label": "Unlimited Turbo 7D",
+      "_source": "pattern"
+    },
+    {
+      "id": "FREEDOM_MONTHLY",
+      "label": "Freedom Monthly",
+      "_source": "pattern"
+    },
+    {
+      "id": "FREEDOM_WEEKLY",
+      "label": "Freedom Weekly",
+      "_source": "pattern"
+    },
+    {
+      "id": "COMBO_LITE_7D",
+      "label": "Combo Lite 7D",
+      "_source": "pattern"
+    },
+    {
+      "id": "COMBO_LITE_30D",
+      "label": "Combo Lite 30D",
+      "_source": "pattern"
+    },
+    {
+      "id": "SOCIAL",
+      "label": "Social",
+      "_source": "pattern"
+    },
+    {
+      "id": "DATA_ONLY",
+      "label": "Data Only",
+      "_source": "pattern"
+    }
+  ]
+}
